@@ -1,2 +1,2 @@
 # tic-tac-toe
-Tic Tac Toe Game
+Brain neuron comparison between animals
