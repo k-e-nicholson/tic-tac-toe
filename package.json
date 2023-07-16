@@ -1,0 +1,33 @@
+{
+  "name": "brain-neuron-analysis",
+  "version": "1.0.0",
+  "description": "Determining the coorelation, if any, between neuron density and IQ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/k-e-nicholson/tic-tac-toe.git"
+  },
+  "keywords": [
+    "tictactoe",
+    "game"
+  ],
+  "author": "Katherine Nicholson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k-e-nicholson/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/k-e-nicholson/tic-tac-toe#readme",
+  "devDependencies": {
+    "electron": "^25.3.0",
+    "electron-builder": "^24.4.0"
+  },
+  "dependencies": {
+    "sql.js": "^1.8.0",
+    "sqlite3": "^5.1.6"
+  }
+}
