@@ -1,2 +1,2 @@
 getCount();
-close();
+// close();

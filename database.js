@@ -16,13 +16,20 @@ const db = new sqlite3.Database('./mock.db', sqlite3.OPEN_READWRITE, (err) =>{
 //
 //
 //
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function returnCount() {
-    const sql = 'SELECT COUNT(*) FROM brains_and_neurons'
+    const sql = 'SELECT COUNT(*) count FROM brains_and_neurons'
 
     let count = db.prepare(sql, (err)=> {
         if (err) return console.error(err.message);
         console.log('query successfully ran');
     }).get().count;
+    await sleep(2000);
+    console.log(count);
     return count;
 }
 
