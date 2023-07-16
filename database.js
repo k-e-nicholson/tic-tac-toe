@@ -32,8 +32,8 @@ async function getCount() {
     return count;
 }
 
-async function close() {
-    db.close((err)=> {
-        if (err) return console.error(err.message);
-    });
-}
+// async function close() {
+//     db.close((err)=> {
+//         if (err) return console.error(err.message);
+//     });
+// }
