@@ -16,30 +16,24 @@ const db = new sqlite3.Database('./mock.db', sqlite3.OPEN_READWRITE, (err) =>{
 //
 //
 //
-async function getCount() {
+async function returnCount() {
     const sql = 'SELECT COUNT(*) FROM brains_and_neurons'
 
-    var count = await db.run(sql, (err)=> {
+    let count = db.prepare(sql, (err)=> {
         if (err) return console.error(err.message);
         console.log('query successfully ran');
-    });
-    console.log("COUNT :" + count.value);
-    return count;
-
-    db.close((err)=> {
-        if (err) return console.error(err.message);
-    });
-}
-
-
-
-
-
-
-async function getCount(count) {
-    console.log('DB: '+ count);
+    }).get().count;
     return count;
 }
 
-//query table
+async function getCount() {
+    let count = await returnCount();
+    console.log("COUNT :" + count);
+    return count;
+}
 
+// async function close() {
+//     db.close((err)=> {
+//         if (err) return console.error(err.message);
+//     });
+// }
