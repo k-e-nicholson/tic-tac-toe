@@ -14,7 +14,7 @@ const createWindow = () => {
 
     win.loadFile('index.html');
 };
-
+app.allowRendererProcessReuse = false;
 app.whenReady().then(() => {
     createWindow()
 });
