@@ -22,20 +22,22 @@ function sleep(ms) {
 }
 
 async function returnCount() {
-    const sql = 'SELECT COUNT(*) count FROM brains_and_neurons'
+    // const sql =
 
-    let count = db.prepare(sql, (err)=> {
-        if (err) return console.error(err.message);
-        console.log('query successfully ran');
-    }).get().count;
+    let rows = db.prepare('SELECT COUNT(*) FROM brains_and_neurons').get();
+
+    let count = rows['COUNT(*)'];
+
+    // let count = db.p(sql, (err, result) => result.count);  //'...', (err, result) => result.count)
+
     await sleep(2000);
-    console.log(count);
+    console.log('COUNT(*)', count);
     return count;
 }
 
 async function getCount() {
     let count = await returnCount();
-    console.log("COUNT :" + count);
+    console.log("COUNT: ", count);
     return count;
 }
 
